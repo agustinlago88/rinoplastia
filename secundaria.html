@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rinoplastia Ultrasónica Secundaria en Buenos Aires · Dr. Leandro Vila · Revisión y corrección de rinoplastias previas con bisturí piezoeléctrico. Análisis anatómico profundo, máxima precisión y resultados naturales." />
+    <title>Rinoplastia Secundaria · Dr. Leandro Vila</title>
+
+    <!-- ── Meta Pixel ── -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'TU_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+    <!-- ── End Meta Pixel ── -->
+
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary:        '#0F1117',
+                        secondary:      '#C4A45A',
+                        accent:         '#1C3A5E',
+                        muted:          '#6B7280',
+                        surface:        '#F9F7F4',
+                        'surface-dark': '#080C14',
+                        'on-primary':   '#FFFFFF',
+                        'on-surface':   '#0F1117',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        /* ── Reveal on scroll ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Scrollbar ── */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #080C14; }
+        ::-webkit-scrollbar-thumb { background: #C4A45A; border-radius: 4px; }
+
+        /* ── Material Symbols ── */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 40;
+        }
+
+        /* ── Hero overlay ── */
+        .hero-overlay {
+            background: linear-gradient(
+                105deg,
+                rgba(8, 12, 20, 0.92) 0%,
+                rgba(8, 12, 20, 0.62) 55%,
+                rgba(8, 12, 20, 0.22) 100%
+            );
+        }
+
+        /* ── Gold accent line ── */
+        .gold-line {
+            display: block;
+            width: 44px;
+            height: 2px;
+            background: #C4A45A;
+        }
+
+        /* ── Section label ── */
+        .section-label {
+            display: block;
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: #C4A45A;
+        }
+
+        /* ── Video responsive ── */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+
+        /* ── Navbar scroll state ── */
+        .navbar-scrolled {
+            background-color: rgba(8, 12, 20, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-surface-dark text-on-primary font-sans antialiased">
+
+    <!-- ════════════════════════════════════════
+         NAVBAR
+    ════════════════════════════════════════ -->
+    <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-500 py-5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+
+            <!-- Marca -->
+            <a href="index.html" class="flex flex-col leading-none group">
+                <span class="text-[0.7rem] tracking-[0.22em] text-secondary uppercase font-semibold group-hover:text-secondary/80 transition-colors">Dr. Leandro Vila</span>
+                <span class="text-[0.58rem] tracking-[0.16em] text-on-primary/45 uppercase font-light">Cirujano Plástico · Buenos Aires</span>
+            </a>
+
+            <!-- Navegación desktop -->
+            <nav class="hidden lg:flex items-center gap-7 text-[0.68rem] tracking-[0.16em] uppercase font-medium">
+                <a href="#inicio"          class="text-on-primary/65 hover:text-on-primary transition-colors">Inicio</a>
+                <a href="#procedimiento"   class="text-on-primary/65 hover:text-on-primary transition-colors">Procedimiento</a>
+                <a href="#complejidad"     class="text-on-primary/65 hover:text-on-primary transition-colors">¿Por qué es diferente?</a>
+                <a href="#doctor"          class="text-on-primary/65 hover:text-on-primary transition-colors">Dr. Vila</a>
+                <a href="#testimonios"     class="text-on-primary/65 hover:text-on-primary transition-colors">Testimonios</a>
+                <a href="index.html"       class="text-secondary/75 hover:text-secondary transition-colors border-b border-secondary/30 pb-px">Rin. Primaria</a>
+                <a href="#contacto"
+                   class="ml-2 bg-secondary text-primary text-[0.65rem] tracking-[0.16em] uppercase font-semibold px-6 py-2.5 rounded-sm hover:bg-secondary/85 transition-all hover:scale-[1.03] active:scale-100">
+                    Consulta
+                </a>
+            </nav>
+
+            <!-- Móvil: solo CTA -->
+            <a href="https://wa.me/5491139583670?text=Hola%2C%20me%20interesa%20consultar%20sobre%20Rinoplastia%20Secundaria%20con%20el%20Dr.%20Vila"
+               target="_blank" rel="noopener"
+               class="lg:hidden flex items-center gap-1.5 bg-secondary text-primary text-[0.62rem] tracking-widest uppercase font-semibold px-4 py-2.5 rounded-sm">
+                <span class="material-symbols-outlined text-base leading-none">chat</span>
+                Consultar
+            </a>
+        </div>
+    </header>
+
+    <!-- ════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════ -->
+    <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./home-1.jpg');"></div>
+        <div class="absolute inset-0 hero-overlay"></div>
+
+        <!-- Pill de página secundaria -->
+        <div class="absolute top-28 left-6 lg:left-12 z-10">
+            <span class="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/25 text-secondary text-[0.58rem] tracking-[0.2em] uppercase font-semibold px-4 py-1.5 rounded-full backdrop-blur-sm">
+                <span class="material-symbols-outlined text-xs leading-none">autorenew</span>
+                Cirugía de Revisión
+            </span>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-44 pb-28">
+            <div class="max-w-2xl">
+                <span class="section-label mb-5 reveal">Corrección · Revisión · Segunda Oportunidad</span>
+                <h1 class="text-5xl md:text-6xl lg:text-[4.5rem] font-light leading-[1.06] tracking-tight mb-7 reveal">
+                    Rinoplastia<br/>
+                    <strong class="font-bold text-secondary">Secundaria</strong>
+                </h1>
+                <p class="text-base md:text-lg text-on-primary/70 font-light leading-relaxed max-w-xl mb-5 reveal">
+                    Cuando el resultado de una cirugía previa no fue el esperado —ya sea por motivos estéticos o funcionales— el Dr. Vila aborda cada caso de revisión con un protocolo de análisis anatómico profundo y la precisión del bisturí ultrasónico.
+                </p>
+                <p class="text-sm text-on-primary/45 font-light leading-relaxed max-w-lg mb-11 reveal">
+                    La rinoplastia secundaria es técnicamente la más exigente de todas las cirugías nasales. Requiere experiencia, criterio clínico y la tecnología adecuada para trabajar sobre estructuras ya intervenidas.
+                </p>
+                <div class="flex flex-wrap gap-4 reveal">
+                    <a href="https://wa.me/5491139583670?text=Hola%2C%20quisiera%20consultar%20sobre%20Rinoplastia%20Secundaria%20con%20el%20Dr.%20Vila"
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-2.5 bg-secondary text-primary text-xs font-bold tracking-[0.18em] uppercase px-9 py-4 rounded-sm hover:bg-secondary/85 transition-all hover:scale-[1.02] active:scale-100 shadow-lg shadow-secondary/20">
+                        <span class="material-symbols-outlined text-lg leading-none">chat</span>
+                        Solicitar Evaluación
+                    </a>
+                    <a href="#procedimiento"
+                       class="inline-flex items-center gap-2.5 border border-on-primary/25 text-on-primary/75 text-xs font-medium tracking-[0.18em] uppercase px-9 py-4 rounded-sm hover:border-secondary hover:text-secondary transition-all">
+                        Ver Procedimiento
+                        <span class="material-symbols-outlined text-lg leading-none">south</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll pulse -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-30">
+            <span class="text-[0.5rem] tracking-[0.3em] uppercase text-on-primary font-light">Scroll</span>
+            <div class="w-px h-10 bg-gradient-to-b from-on-primary to-transparent animate-pulse"></div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         ALERTA DE CONFIANZA · 3 COLUMNAS
+    ════════════════════════════════════════ -->
+    <section class="bg-primary border-y border-on-primary/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-on-primary/6">
+
+                <div class="px-10 py-12 reveal">
+                    <span class="material-symbols-outlined text-secondary text-4xl block mb-4">manage_search</span>
+                    <h3 class="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-on-primary mb-2">Diagnóstico Exhaustivo</h3>
+                    <p class="text-on-primary/50 text-sm font-light leading-relaxed">
+                        Cada revisión comienza con un análisis milimétrico del estado actual: hueso, cartílagos, cicatrices internas y función respiratoria. No hay plan quirúrgico sin diagnóstico completo.
+                    </p>
+                </div>
+
+                <div class="px-10 py-12 reveal" style="transition-delay:0.1s">
+                    <span class="material-symbols-outlined text-secondary text-4xl block mb-4">build_circle</span>
+                    <h3 class="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-on-primary mb-2">Trabajo Sobre Tejido Operado</h3>
+                    <p class="text-on-primary/50 text-sm font-light leading-relaxed">
+                        La tecnología piezoeléctrica permite trabajar con máxima delicadeza sobre estructuras previamente intervenidas, reduciendo el riesgo de dañar tejidos ya comprometidos.
+                    </p>
+                </div>
+
+                <div class="px-10 py-12 reveal" style="transition-delay:0.2s">
+                    <span class="material-symbols-outlined text-secondary text-4xl block mb-4">verified_user</span>
+                    <h3 class="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-on-primary mb-2">Resultados Predecibles</h3>
+                    <p class="text-on-primary/50 text-sm font-light leading-relaxed">
+                        La experiencia en casos complejos y el uso de tecnología de precisión permiten planificar y comunicar un resultado realista, honesto y alcanzable para cada paciente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         PROCEDIMIENTO + VIDEO
+    ════════════════════════════════════════ -->
+    <section id="procedimiento" class="py-28 bg-surface-dark">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+
+                <!-- Texto -->
+                <div class="reveal">
+                    <span class="section-label mb-5">El procedimiento de revisión</span>
+                    <h2 class="text-4xl md:text-5xl font-light leading-tight mb-6">
+                        Reconstruir con<br/>
+                        <strong class="font-bold text-secondary">criterio y precisión</strong>
+                    </h2>
+                    <span class="gold-line mb-9"></span>
+                    <div class="space-y-5 text-on-primary/60 text-sm font-light leading-relaxed">
+                        <p>
+                            La rinoplastia secundaria es considerada la intervención más compleja dentro de la cirugía plástica nasal. El tejido operado presenta adherencias, cicatrices internas y cartílagos debilitados o resecados en exceso que condicionan radicalmente la planificación quirúrgica. No existe un protocolo estándar: <strong class="text-on-primary font-medium">cada caso es único y exige una estrategia completamente individualizada</strong>.
+                        </p>
+                        <p>
+                            El Dr. Vila emplea el bisturí piezoeléctrico para trabajar sobre el componente óseo con la mínima perturbación posible de los tejidos adyacentes ya comprometidos. Cuando se requiere reconstrucción cartilaginosa, utiliza injertos tomados del propio septum, oreja o costilla según la necesidad estructural, con un criterio que prioriza siempre <strong class="text-on-primary font-medium">la armonía anatómica y la función respiratoria</strong>.
+                        </p>
+                        <p>
+                            El resultado de una buena rinoplastia secundaria no solo mejora la estética: devuelve la confianza. El Dr. Vila entiende el peso emocional de llegar a esta consulta y trabaja con la misma transparencia y dedicación desde la primera evaluación hasta el seguimiento postoperatorio.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5491139583670?text=Hola%2C%20quiero%20consultar%20sobre%20Rinoplastia%20Secundaria%20con%20el%20Dr.%20Vila"
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-2.5 mt-10 bg-secondary text-primary text-[0.65rem] font-bold tracking-[0.18em] uppercase px-7 py-3.5 rounded-sm hover:bg-secondary/85 transition-all hover:scale-[1.02] active:scale-100">
+                        <span class="material-symbols-outlined text-base leading-none">chat</span>
+                        Consultar por WhatsApp
+                    </a>
+                </div>
+
+                <!-- Video -->
+                <div class="reveal" style="transition-delay:0.15s">
+                    <div class="video-wrapper rounded-sm overflow-hidden ring-1 ring-secondary/15 shadow-2xl shadow-black/60">
+                        <iframe
+                            src="https://www.youtube.com/embed/5_yjbi3_-6g"
+                            title="Rinoplastia Ultrasónica Secundaria · Dr. Leandro Vila"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                    <p class="mt-3.5 text-on-primary/30 text-[0.6rem] tracking-widest uppercase text-center">Material educativo · Procedimiento real</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         ¿POR QUÉ ES DIFERENTE? COMPARATIVA
+    ════════════════════════════════════════ -->
+    <section id="complejidad" class="py-28 bg-primary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div class="text-center mb-16 reveal">
+                <span class="section-label mb-5">La diferencia técnica</span>
+                <h2 class="text-4xl md:text-5xl font-light leading-tight">
+                    Primaria vs. Secundaria:<br/>
+                    <strong class="font-bold text-secondary">por qué la experiencia importa</strong>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 reveal">
+                <!-- Primaria -->
+                <div class="bg-surface-dark/50 border border-on-primary/7 rounded-sm p-8 md:p-10">
+                    <h3 class="flex items-center gap-2 text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-on-primary/35 mb-7">
+                        <span class="material-symbols-outlined text-on-primary/20 text-lg">radio_button_unchecked</span>
+                        Rinoplastia Primaria
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">horizontal_rule</span>
+                            Tejidos vírgenes, sin cicatrices internas ni adherencias
+                        </li>
+                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">horizontal_rule</span>
+                            Cartílagos íntegros y con plena capacidad estructural
+                        </li>
+                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">horizontal_rule</span>
+                            Anatomía predecible y planos quirúrgicos bien definidos
+                        </li>
+                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">horizontal_rule</span>
+                            Menor necesidad de injertos cartilaginosos propios
+                        </li>
+                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">horizontal_rule</span>
+                            Complejidad técnica estándar para un cirujano entrenado
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Secundaria -->
+                <div class="bg-secondary/5 border border-secondary/22 rounded-sm p-8 md:p-10">
+                    <h3 class="flex items-center gap-2 text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-secondary mb-7">
+                        <span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings:'FILL' 1">check_circle</span>
+                        Rinoplastia Secundaria · Dr. Vila
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
+                            Análisis del tejido cicatricial y fibrosis interna previa
+                        </li>
+                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
+                            Reconstrucción con injertos autólogos según el déficit estructural
+                        </li>
+                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
+                            Bisturí piezoeléctrico para remodelado óseo sin trauma adicional
+                        </li>
+                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
+                            Restauración de la función respiratoria comprometida
+                        </li>
+                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
+                            Planificación honesta con objetivos realistas y comunicados
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4 KPI Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                <div class="bg-surface-dark/35 border border-on-primary/5 rounded-sm p-6 text-center reveal">
+                    <span class="material-symbols-outlined text-secondary text-3xl block mb-3">manage_search</span>
+                    <p class="text-[0.62rem] font-semibold tracking-widest uppercase text-on-primary mb-1">Evaluación</p>
+                    <p class="text-on-primary/45 text-xs font-light">Análisis anatómico minucioso previo</p>
+                </div>
+                <div class="bg-surface-dark/35 border border-on-primary/5 rounded-sm p-6 text-center reveal" style="transition-delay:0.07s">
+                    <span class="material-symbols-outlined text-secondary text-3xl block mb-3">precision_manufacturing</span>
+                    <p class="text-[0.62rem] font-semibold tracking-widest uppercase text-on-primary mb-1">Tecnología</p>
+                    <p class="text-on-primary/45 text-xs font-light">Bisturí piezoeléctrico en tejido operado</p>
+                </div>
+                <div class="bg-surface-dark/35 border border-on-primary/5 rounded-sm p-6 text-center reveal" style="transition-delay:0.14s">
+                    <span class="material-symbols-outlined text-secondary text-3xl block mb-3">self_improvement</span>
+                    <p class="text-[0.62rem] font-semibold tracking-widest uppercase text-on-primary mb-1">Empatía</p>
+                    <p class="text-on-primary/45 text-xs font-light">Contención real desde la primera consulta</p>
+                </div>
+                <div class="bg-surface-dark/35 border border-on-primary/5 rounded-sm p-6 text-center reveal" style="transition-delay:0.21s">
+                    <span class="material-symbols-outlined text-secondary text-3xl block mb-3">verified</span>
+                    <p class="text-[0.62rem] font-semibold tracking-widests uppercase text-on-primary mb-1">Experiencia</p>
+                    <p class="text-on-primary/45 text-xs font-light">Más de 15 años en casos de alta complejidad</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         FILOSOFÍA / QUIÉN ES CANDIDATO
+    ════════════════════════════════════════ -->
+    <section class="py-24 bg-surface-dark">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+                <!-- Izquierda: candidatos -->
+                <div class="reveal">
+                    <span class="section-label mb-5">¿Es tu caso?</span>
+                    <h2 class="text-4xl font-light leading-tight mb-6">
+                        Motivos frecuentes para<br/>
+                        <strong class="font-bold text-secondary">una revisión quirúrgica</strong>
+                    </h2>
+                    <span class="gold-line mb-9"></span>
+                    <ul class="space-y-4 text-on-primary/60 text-sm font-light leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
+                            Resultado estético insatisfactorio o asimétrico tras una primera cirugía
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
+                            Nariz sobreopera: punta caída, puente demasiado rebajado o nariz en "silla de montar"
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
+                            Obstrucción respiratoria nueva o agravada luego de la intervención previa
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
+                            Irregularidades óseas o cartilaginosas visibles o palpables
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
+                            Cicatrización excesiva que alteró la forma esperada del resultado
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
+                            Implantes o injertos previos que requieren reposicionamiento o extracción
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Derecha: filosofía -->
+                <div class="reveal" style="transition-delay:0.12s">
+                    <div class="bg-primary border border-on-primary/8 rounded-sm p-8 md:p-10 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary text-2xl">format_quote</span>
+                            <h3 class="text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-secondary">Filosofía de trabajo</h3>
+                        </div>
+                        <p class="text-on-primary/65 text-sm font-light leading-relaxed">
+                            Una rinoplastia secundaria no es simplemente "arreglar" lo anterior. Es escuchar lo que el paciente quería, entender qué falló y diseñar un plan que sea técnicamente viable, estéticamente superior y emocionalmente honesto.
+                        </p>
+                        <p class="text-on-primary/65 text-sm font-light leading-relaxed">
+                            El Dr. Vila no acepta casos que no pueda mejorar de forma real y demostrable. Si en la evaluación el riesgo supera al beneficio potencial, lo comunica con claridad. Esa honestidad es parte del resultado.
+                        </p>
+                        <div class="pt-2 border-t border-on-primary/8">
+                            <p class="text-secondary text-[0.65rem] font-semibold tracking-[0.18em] uppercase">Dr. Leandro Vila · M.N. 147814</p>
+                            <p class="text-on-primary/30 text-[0.6rem] font-light mt-1">Cirujano Plástico · Especialista en Cirugía Nasal</p>
+                        </div>
+                    </div>
+
+                    <!-- Link a rinoplastia primaria -->
+                    <div class="mt-5 bg-secondary/5 border border-secondary/18 rounded-sm p-5 flex items-center justify-between gap-4">
+                        <div>
+                            <p class="text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-secondary mb-1">¿Primera operación?</p>
+                            <p class="text-on-primary/45 text-xs font-light">Si nunca te operaste la nariz, visitá la página de Rinoplastia Primaria.</p>
+                        </div>
+                        <a href="index.html"
+                           class="shrink-0 inline-flex items-center gap-1.5 text-[0.62rem] font-semibold tracking-[0.18em] uppercase text-secondary border-b border-secondary/35 pb-0.5 hover:border-secondary transition-colors whitespace-nowrap">
+                            Ver Primaria
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         DR. VILA
+    ════════════════════════════════════════ -->
+    <section id="doctor" class="py-28 bg-primary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl mx-auto text-center reveal">
+                <span class="section-label mb-5">El especialista</span>
+                <h2 class="text-4xl md:text-5xl font-light leading-tight mb-6">Dr. Leandro Vila</h2>
+                <span class="gold-line mx-auto mb-9"></span>
+                <p class="text-on-primary/55 text-sm font-light leading-relaxed mb-5">
+                    El Dr. Vila es uno de los pocos cirujanos en Argentina que combina formación específica en rinoplastia ultrasónica con una sólida experiencia en casos de revisión de alta complejidad. Su entrenamiento con referentes europeos —en centros especializados de Milán, París y Barcelona— le brinda una perspectiva técnica que va más allá del estándar local.
+                </p>
+                <p class="text-on-primary/55 text-sm font-light leading-relaxed mb-12">
+                    En la rinoplastia secundaria, la experiencia no es un diferencial deseable: es un requisito indispensable. Cada tejido operado es distinto, cada cicatriz tiene su propia lógica y cada expectativa del paciente carga con una historia personal que el Dr. Vila toma como punto de partida, no como obstáculo.
+                </p>
+                <div class="flex flex-wrap justify-center gap-8 md:gap-14">
+                    <div>
+                        <p class="text-4xl font-bold text-secondary">+1.200</p>
+                        <p class="text-[0.6rem] text-on-primary/35 tracking-[0.2em] uppercase font-light mt-1.5">Rinoplastias realizadas</p>
+                    </div>
+                    <div class="w-px bg-on-primary/8 self-stretch hidden md:block"></div>
+                    <div>
+                        <p class="text-4xl font-bold text-secondary">15+</p>
+                        <p class="text-[0.6rem] text-on-primary/35 tracking-[0.2em] uppercase font-light mt-1.5">Años de trayectoria</p>
+                    </div>
+                    <div class="w-px bg-on-primary/8 self-stretch hidden md:block"></div>
+                    <div>
+                        <p class="text-4xl font-bold text-secondary">Alta</p>
+                        <p class="text-[0.6rem] text-on-primary/35 tracking-[0.2em] uppercase font-light mt-1.5">Complejidad · Casos de revisión</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         PROCESO · PASOS DE LA CONSULTA
+    ════════════════════════════════════════ -->
+    <section class="py-24 bg-surface-dark">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div class="text-center mb-16 reveal">
+                <span class="section-label mb-5">El proceso</span>
+                <h2 class="text-4xl font-light leading-tight">
+                    Cómo trabajamos<br/>
+                    <strong class="font-bold text-secondary">tu caso de revisión</strong>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                <div class="bg-primary border border-on-primary/7 rounded-sm p-7 reveal">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-secondary font-bold text-2xl font-light opacity-40">01</span>
+                        <span class="material-symbols-outlined text-secondary text-xl">person_search</span>
+                    </div>
+                    <h3 class="text-[0.68rem] font-semibold tracking-[0.18em] uppercase text-on-primary mb-3">Consulta Inicial</h3>
+                    <p class="text-on-primary/45 text-xs font-light leading-relaxed">
+                        Evaluación completa del historial quirúrgico, análisis fotográfico y exploración funcional y estética de la anatomía nasal actual.
+                    </p>
+                </div>
+
+                <div class="bg-primary border border-on-primary/7 rounded-sm p-7 reveal" style="transition-delay:0.08s">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-secondary font-bold text-2xl font-light opacity-40">02</span>
+                        <span class="material-symbols-outlined text-secondary text-xl">draw</span>
+                    </div>
+                    <h3 class="text-[0.68rem] font-semibold tracking-[0.18em] uppercase text-on-primary mb-3">Plan Personalizado</h3>
+                    <p class="text-on-primary/45 text-xs font-light leading-relaxed">
+                        Diseño quirúrgico específico para el caso: qué se puede mejorar, cómo y en qué plazos. Sin promesas irreales. Sin omisiones.
+                    </p>
+                </div>
+
+                <div class="bg-primary border border-on-primary/7 rounded-sm p-7 reveal" style="transition-delay:0.16s">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-secondary font-bold text-2xl font-light opacity-40">03</span>
+                        <span class="material-symbols-outlined text-secondary text-xl">precision_manufacturing</span>
+                    </div>
+                    <h3 class="text-[0.68rem] font-semibold tracking-[0.18em] uppercase text-on-primary mb-3">Cirugía de Revisión</h3>
+                    <p class="text-on-primary/45 text-xs font-light leading-relaxed">
+                        Intervención con bisturí piezoeléctrico, injertos propios cuando es necesario y máximo respeto por las estructuras existentes.
+                    </p>
+                </div>
+
+                <div class="bg-primary border border-on-primary/7 rounded-sm p-7 reveal" style="transition-delay:0.24s">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-secondary font-bold text-2xl font-light opacity-40">04</span>
+                        <span class="material-symbols-outlined text-secondary text-xl">monitoring</span>
+                    </div>
+                    <h3 class="text-[0.68rem] font-semibold tracking-[0.18em] uppercase text-on-primary mb-3">Seguimiento Activo</h3>
+                    <p class="text-on-primary/45 text-xs font-light leading-relaxed">
+                        Control postoperatorio personalizado y extendido hasta confirmar que el resultado final es el esperado por el paciente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         TESTIMONIOS (carousel via app.js)
+    ════════════════════════════════════════ -->
+    <section id="testimonios" class="py-28 bg-gradient-to-b from-primary to-surface-dark">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div class="text-center mb-14 reveal">
+                <span class="section-label mb-5">Experiencias reales</span>
+                <h2 class="text-4xl md:text-5xl font-light leading-tight">
+                    Pacientes que encontraron<br/>
+                    <strong class="font-bold text-secondary">la corrección que buscaban</strong>
+                </h2>
+            </div>
+
+            <div class="relative max-w-3xl mx-auto">
+
+                <!-- Slide 1 -->
+                <div data-testimonial-slide class="bg-primary/80 border border-on-primary/8 rounded-sm p-10 md:p-14">
+                    <div class="flex gap-1 text-secondary mb-7">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                    </div>
+                    <blockquote class="text-on-primary/70 text-base md:text-lg font-light leading-relaxed mb-9 italic">
+                        "Me había operado tres años antes y el resultado me dejó con la punta caída y problemas para respirar. Llegué al Dr. Vila con mucho miedo a una segunda cirugía. La evaluación fue muy detallada, me explicó exactamente qué iba a hacer y por qué. Hoy tengo la nariz que siempre quise y respiro perfectamente."
+                    </blockquote>
+                    <div class="flex items-center gap-4">
+                        <div class="w-11 h-11 rounded-full bg-secondary/15 border border-secondary/25 flex items-center justify-center shrink-0">
+                            <span class="text-secondary font-semibold text-sm">C</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-on-primary">Carolina M.</p>
+                            <p class="text-[0.65rem] text-on-primary/35 font-light tracking-wide">Belgrano, Buenos Aires · 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div data-testimonial-slide class="hidden bg-primary/80 border border-on-primary/8 rounded-sm p-10 md:p-14">
+                    <div class="flex gap-1 text-secondary mb-7">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                    </div>
+                    <blockquote class="text-on-primary/70 text-base md:text-lg font-light leading-relaxed mb-9 italic">
+                        "Consulté con varios cirujanos antes y ninguno me inspiró la confianza que me dio el Dr. Vila. Fue el único que me dijo con honestidad qué podía mejorar y qué no. La cirugía de revisión fue un éxito total: quedé feliz con la estética y sin las asimetrías que me molestaban."
+                    </blockquote>
+                    <div class="flex items-center gap-4">
+                        <div class="w-11 h-11 rounded-full bg-secondary/15 border border-secondary/25 flex items-center justify-center shrink-0">
+                            <span class="text-secondary font-semibold text-sm">F</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-on-primary">Federico A.</p>
+                            <p class="text-[0.65rem] text-on-primary/35 font-light tracking-wide">San Isidro, Buenos Aires · 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div data-testimonial-slide class="hidden bg-primary/80 border border-on-primary/8 rounded-sm p-10 md:p-14">
+                    <div class="flex gap-1 text-secondary mb-7">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
+                    </div>
+                    <blockquote class="text-on-primary/70 text-base md:text-lg font-light leading-relaxed mb-9 italic">
+                        "Venía de una rinoplastia en el exterior que no me dejó conforme. La nariz quedó con una irregularidad en el dorso muy notoria. Leandro me operó con técnica ultrasónica y el resultado fue impecable. La diferencia en la recuperación también fue brutal: poquísimos moratones."
+                    </blockquote>
+                    <div class="flex items-center gap-4">
+                        <div class="w-11 h-11 rounded-full bg-secondary/15 border border-secondary/25 flex items-center justify-center shrink-0">
+                            <span class="text-secondary font-semibold text-sm">L</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-on-primary">Luciana P.</p>
+                            <p class="text-[0.65rem] text-on-primary/35 font-light tracking-wide">Palermo, Buenos Aires · 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles del carrusel -->
+                <div class="flex items-center justify-between mt-8">
+                    <button data-testimonial-prev
+                            class="w-10 h-10 rounded-full border border-on-primary/12 flex items-center justify-center text-on-primary/40 hover:border-secondary hover:text-secondary transition-all">
+                        <span class="material-symbols-outlined text-base">chevron_left</span>
+                    </button>
+                    <div data-testimonial-dots class="flex items-center gap-2.5"></div>
+                    <button data-testimonial-next
+                            class="w-10 h-10 rounded-full border border-on-primary/12 flex items-center justify-center text-on-primary/40 hover:border-secondary hover:text-secondary transition-all">
+                        <span class="material-symbols-outlined text-base">chevron_right</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         CONTACTO / CONSULTA
+    ════════════════════════════════════════ -->
+    <section id="contacto" class="relative py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./consul.jpg');"></div>
+        <div class="absolute inset-0 bg-surface-dark/88"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-xl mx-auto text-center reveal">
+                <span class="section-label mb-5">El primer paso hacia la corrección</span>
+                <h2 class="text-4xl md:text-5xl font-light leading-tight mb-6">
+                    Tu evaluación inicial,<br/>
+                    <strong class="font-bold text-secondary">sin compromiso</strong>
+                </h2>
+                <span class="gold-line mx-auto mb-9"></span>
+                <p class="text-on-primary/55 text-sm font-light leading-relaxed mb-11">
+                    En la consulta el Dr. Vila analizará en detalle tu caso: qué se realizó antes, qué resultado esperabas, qué molestias tenés hoy y qué es técnicamente posible alcanzar. Una conversación franca, sin presiones, donde la información es el eje de todo.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/5491139583670?text=Hola%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n%20de%20Rinoplastia%20Secundaria%20con%20el%20Dr.%20Vila"
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2.5 bg-secondary text-primary text-xs font-bold tracking-[0.18em] uppercase px-9 py-4 rounded-sm hover:bg-secondary/85 transition-all hover:scale-[1.02] active:scale-100 shadow-lg shadow-secondary/20">
+                        <span class="material-symbols-outlined text-lg leading-none">chat</span>
+                        Reservar por WhatsApp
+                    </a>
+                    <a href="tel:+5491139583670"
+                       class="inline-flex items-center justify-center gap-2.5 border border-on-primary/22 text-on-primary/70 text-xs font-medium tracking-[0.18em] uppercase px-9 py-4 rounded-sm hover:border-secondary hover:text-secondary transition-all">
+                        <span class="material-symbols-outlined text-lg leading-none">call</span>
+                        Llamar al consultorio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         FOOTER
+    ════════════════════════════════════════ -->
+    <footer class="bg-surface-dark border-t border-on-primary/5 pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+
+                <!-- Marca -->
+                <div>
+                    <p class="text-[0.7rem] tracking-[0.22em] text-secondary uppercase font-semibold mb-1">Dr. Leandro Vila</p>
+                    <p class="text-[0.58rem] tracking-[0.16em] text-on-primary/35 uppercase font-light mb-5">Cirujano Plástico · Buenos Aires</p>
+                    <p class="text-on-primary/40 text-xs font-light leading-relaxed">
+                        Especialista en Rinoplastia Ultrasónica primaria y secundaria, y cirugía plástica facial de alta complejidad. Consultorios en la Ciudad de Buenos Aires.
+                    </p>
+                </div>
+
+                <!-- Nav -->
+                <div>
+                    <p class="text-[0.6rem] tracking-[0.22em] text-on-primary/30 uppercase font-semibold mb-5">Navegación</p>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio"         class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Inicio</a></li>
+                        <li><a href="#procedimiento"  class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Procedimiento</a></li>
+                        <li><a href="#complejidad"    class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">¿Por qué es diferente?</a></li>
+                        <li><a href="#doctor"         class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Dr. Vila</a></li>
+                        <li><a href="#testimonios"    class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Testimonios</a></li>
+                        <li><a href="index.html"      class="text-secondary/65 text-xs font-light hover:text-secondary transition-colors">Rinoplastia Primaria</a></li>
+                        <li><a href="#contacto"       class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Consulta</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacto -->
+                <div>
+                    <p class="text-[0.6rem] tracking-[0.22em] text-on-primary/30 uppercase font-semibold mb-5">Contacto</p>
+                    <ul class="space-y-3.5">
+                        <li class="flex items-center gap-2.5 text-on-primary/45 text-xs font-light">
+                            <span class="material-symbols-outlined text-secondary text-sm shrink-0">location_on</span>
+                            Buenos Aires, Argentina
+                        </li>
+                        <li class="flex items-center gap-2.5 text-xs font-light">
+                            <span class="material-symbols-outlined text-secondary text-sm shrink-0">chat</span>
+                            <a href="https://wa.me/5491139583670" target="_blank" rel="noopener"
+                               class="text-on-primary/45 hover:text-secondary transition-colors">WhatsApp directo</a>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5491139583670?text=Hola%2C%20quiero%20consultar%20sobre%20Rinoplastia%20Secundaria"
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-2 mt-7 bg-secondary/8 border border-secondary/20 text-secondary text-[0.62rem] font-semibold tracking-[0.18em] uppercase px-5 py-2.5 rounded-sm hover:bg-secondary/15 transition-all">
+                        <span class="material-symbols-outlined text-sm">chat</span>
+                        Consultar ahora
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="border-t border-on-primary/5 pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
+                <p class="text-on-primary/20 text-[0.62rem] font-light">© 2025 Dr. Leandro Vila · Todos los derechos reservados</p>
+                <p class="text-on-primary/15 text-[0.62rem] font-light">Registro CUCAI · M.N. 147814</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── Botón flotante WhatsApp ── -->
+    <a href="https://wa.me/5491139583670?text=Hola%2C%20quisiera%20consultar%20sobre%20Rinoplastia%20Secundaria%20con%20el%20Dr.%20Vila"
+       target="_blank" rel="noopener"
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-7 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl shadow-black/30 hover:scale-110 hover:bg-[#20bd5a] transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- ── app.js ── -->
+    <script src="./app.js"></script>
+
+    <!-- ── Navbar scroll effect ── -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 64) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        }, { passive: true });
+    </script>
+
+</body>
+</html>
