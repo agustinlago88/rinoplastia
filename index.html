@@ -1,720 +1,539 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Rinoplastia Ultrasónica en Buenos Aires · Dr. Leandro Vila · Bisturí piezoeléctrico de precisión. Menos moratones, recuperación acelerada y resultados naturales y permanentes." />
-    <title>Rinoplastia Ultrasónica · Dr. Leandro Vila</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rinoplastia ultrasónica en Buenos Aires con el Dr. Leandro Vila. Técnica piezoeléctrica, resultados naturales y recuperación cuidada." />
+  <title>Rinoplastia Ultrasónica | Dr. Leandro Vila</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #171717;
+      --bg-deep: #101010;
+      --panel: #202020;
+      --line: rgba(255, 255, 255, .10);
+      --text: #f7f7f2;
+      --muted: #b6b6b0;
+      --soft: #7d807d;
+      --accent: #55d4ca;
+      --accent-2: #d7b66f;
+      --whatsapp: #25d366;
+    }
 
-    <!-- ── Meta Pixel ── -->
-    <script>
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-        document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'TU_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-    <!-- ── End Meta Pixel ── -->
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Montserrat", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
 
-    <!-- Google Fonts: Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet" />
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      height: 86px;
+      background: rgba(23, 23, 23, .92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 44px);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.74);
+    }
+    .nav-links a { position: relative; padding: 34px 0; }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 24px;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .24s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: #fff; }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+    }
 
-    <!-- Material Symbols -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    .hero {
+      min-height: 100vh;
+      padding-top: 86px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(85,212,202,.10), transparent 38%),
+        var(--bg);
+    }
+    .hero-copy {
+      width: min(640px, calc(100% - 48px));
+      margin-left: max(24px, calc((100vw - 1180px) / 2));
+      margin-right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(56px, 8vw, 112px) 0 clamp(42px, 7vw, 80px);
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: clamp(.68rem, 1vw, .82rem);
+      font-weight: 700;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      margin-bottom: 34px;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 820px;
+      margin-bottom: 32px;
+      font-size: clamp(3.8rem, 8.4vw, 7.5rem);
+      line-height: .84;
+      letter-spacing: -.095em;
+      font-weight: 900;
+    }
+    .hero-lede {
+      max-width: 620px;
+      border-left: 2px solid var(--accent);
+      padding-left: 28px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.32rem);
+      line-height: 1.55;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .btn.primary { background: var(--accent); color: #081210; border-color: var(--accent); }
+    .btn.whatsapp { background: var(--whatsapp); border-color: var(--whatsapp); color: #06140b; }
+    .hero-media {
+      position: relative;
+      min-height: 620px;
+      border-left: 1px solid var(--line);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      background: #090909;
+    }
+    .hero-media::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(23,23,23,.84));
+      z-index: 1;
+    }
+    .hero-media img {
+      width: min(100%, 560px);
+      height: min(82vh, 760px);
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(1) contrast(1.08);
+    }
+    .media-tag {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 0;
+      padding: 18px 26px;
+      background: var(--panel);
+      border-top: 4px solid var(--accent);
+      color: var(--muted);
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary:        '#0F1117',
-                        secondary:      '#C4A45A',
-                        accent:         '#1C3A5E',
-                        muted:          '#6B7280',
-                        surface:        '#F9F7F4',
-                        'surface-dark': '#080C14',
-                        'on-primary':   '#FFFFFF',
-                        'on-surface':   '#0F1117',
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                    },
-                },
-            },
-        };
-    </script>
+    section { padding: clamp(72px, 9vw, 120px) 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(280px, .55fr);
+      gap: 44px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-size: clamp(2.8rem, 7vw, 6.7rem);
+      line-height: .86;
+      letter-spacing: -.08em;
+      font-weight: 900;
+      margin-bottom: 0;
+    }
+    .section-head p, .wide-text {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .feature {
+      min-height: 260px;
+      padding: 34px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.018);
+    }
+    .kicker {
+      display: block;
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: .68rem;
+      margin-bottom: 54px;
+    }
+    .feature h3 {
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+      margin-bottom: 18px;
+    }
+    .feature p { color: var(--muted); line-height: 1.65; margin-bottom: 0; }
 
-    <style>
-        /* ── Reveal on scroll ── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(36px);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(320px, 1fr);
+      gap: clamp(38px, 6vw, 78px);
+      align-items: center;
+    }
+    .video {
+      aspect-ratio: 16/9;
+      background: #080808;
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+    }
+    .video iframe { width: 100%; height: 100%; border: 0; }
+    .quote-band {
+      background: #f2f0ea;
+      color: #171717;
+    }
+    .quote-band h2 { color: #171717; }
+    .quote-band .eyebrow { color: #168a84; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(0,0,0,.12);
+      margin-top: 44px;
+    }
+    .step {
+      background: #fff;
+      padding: 30px;
+      min-height: 220px;
+    }
+    .step strong {
+      color: #168a84;
+      font-size: .75rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .step h3 { color: #171717; margin: 42px 0 12px; }
+    .step p { color: #505050; line-height: 1.55; margin: 0; }
 
-        /* ── Scrollbar ── */
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #080C14; }
-        ::-webkit-scrollbar-thumb { background: #C4A45A; border-radius: 4px; }
+    .doctor-card {
+      display: grid;
+      grid-template-columns: .8fr 1fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .doctor-card img {
+      height: 100%;
+      min-height: 520px;
+      width: 100%;
+      object-fit: cover;
+      filter: grayscale(1);
+    }
+    .doctor-copy { padding: clamp(34px, 6vw, 72px); }
+    .doctor-copy ul {
+      list-style: none;
+      padding: 0;
+      margin: 34px 0 0;
+      display: grid;
+      gap: 16px;
+      color: var(--muted);
+    }
+    .doctor-copy li {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
 
-        /* ── Material Symbols ── */
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 40;
-        }
+    .contact {
+      position: relative;
+      overflow: hidden;
+      background: #0f0f0f;
+    }
+    .contact::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15,15,15,.94), rgba(15,15,15,.74)), url("./consul.jpg") center/cover;
+      filter: grayscale(.25);
+    }
+    .contact .wrap { position: relative; z-index: 1; }
+    .contact-box {
+      max-width: 760px;
+      padding-left: 30px;
+      border-left: 2px solid var(--accent);
+    }
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      color: var(--soft);
+      font-size: .78rem;
+    }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .float-wa {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 60;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 16px 36px rgba(0,0,0,.3);
+    }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* ── Hero overlay ── */
-        .hero-overlay {
-            background: linear-gradient(
-                105deg,
-                rgba(8, 12, 20, 0.88) 0%,
-                rgba(8, 12, 20, 0.55) 55%,
-                rgba(8, 12, 20, 0.18) 100%
-            );
-        }
+    @media (max-width: 960px) {
+      .menu-toggle { display: block; }
+      .nav-links {
+        position: fixed;
+        inset: 86px 0 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 34px 24px;
+        background: rgba(23,23,23,.98);
+      }
+      body.menu-open .nav-links { display: flex; }
+      .nav-links a { padding: 12px 0; }
+      .hero, .section-head, .split, .doctor-card { grid-template-columns: 1fr; }
+      .hero-copy { width: min(100% - 32px, 1180px); margin: 0 auto; }
+      .hero-media { min-height: 560px; border-left: 0; border-top: 1px solid var(--line); }
+      .grid-3, .steps { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 32px, 1180px); }
+    }
 
-        /* ── Gold accent line ── */
-        .gold-line {
-            display: block;
-            width: 44px;
-            height: 2px;
-            background: #C4A45A;
-        }
-
-        /* ── Section label ── */
-        .section-label {
-            display: block;
-            font-size: 0.62rem;
-            font-weight: 600;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-            color: #C4A45A;
-        }
-
-        /* ── Video responsive ── */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 0;
-        }
-
-        /* ── Navbar scroll state ── */
-        .navbar-scrolled {
-            background-color: rgba(8, 12, 20, 0.96);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-        }
-    </style>
+    @media (max-width: 620px) {
+      .site-header, .nav { height: 74px; }
+      .nav-links { top: 74px; }
+      .brand { font-size: 1.1rem; }
+      h1 { font-size: clamp(4rem, 21vw, 6rem); }
+      .hero { padding-top: 74px; }
+      .hero-media { min-height: 480px; }
+      .hero-lede { padding-left: 18px; }
+      .btn { width: 100%; }
+      .feature, .step { padding: 26px; }
+      .doctor-card img { min-height: 420px; }
+    }
+  </style>
 </head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio">Dr. Leandro Vila</a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a class="active" href="#inicio">Inicio</a>
+        <a href="#tecnica">Técnica</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#doctor">Sobre mí</a>
+        <a href="secundaria.html">Secundaria</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" data-menu-toggle>☰</button>
+    </div>
+  </header>
 
-<body class="bg-surface-dark text-on-primary font-sans antialiased">
-
-    <!-- ════════════════════════════════════════
-         NAVBAR
-    ════════════════════════════════════════ -->
-    <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-500 py-5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-
-            <!-- Marca -->
-            <a href="#inicio" class="flex flex-col leading-none group">
-                <span class="text-[0.7rem] tracking-[0.22em] text-secondary uppercase font-semibold group-hover:text-secondary/80 transition-colors">Dr. Leandro Vila</span>
-                <span class="text-[0.58rem] tracking-[0.16em] text-on-primary/45 uppercase font-light">Cirujano Plástico · Buenos Aires</span>
-            </a>
-
-            <!-- Navegación desktop -->
-            <nav class="hidden lg:flex items-center gap-7 text-[0.68rem] tracking-[0.16em] uppercase font-medium">
-                <a href="#inicio"          class="text-on-primary/65 hover:text-on-primary transition-colors">Inicio</a>
-                <a href="#procedimientos"  class="text-on-primary/65 hover:text-on-primary transition-colors">Procedimiento</a>
-                <a href="#beneficios"      class="text-on-primary/65 hover:text-on-primary transition-colors">Beneficios</a>
-                <a href="#doctor"          class="text-on-primary/65 hover:text-on-primary transition-colors">Dr. Vila</a>
-                <a href="#testimonios"     class="text-on-primary/65 hover:text-on-primary transition-colors">Testimonios</a>
-                <a href="secundaria.html"  class="text-secondary/75 hover:text-secondary transition-colors border-b border-secondary/30 pb-px">Rin. Secundaria</a>
-                <a href="#contacto"
-                   class="ml-2 bg-secondary text-primary text-[0.65rem] tracking-[0.16em] uppercase font-semibold px-6 py-2.5 rounded-sm hover:bg-secondary/85 transition-all hover:scale-[1.03] active:scale-100">
-                    Consulta
-                </a>
-            </nav>
-
-            <!-- Móvil: solo CTA -->
-            <a href="https://wa.me/5491139583670?text=Hola%2C%20me%20interesa%20consultar%20sobre%20Rinoplastia%20Ultras%C3%B3nica%20con%20el%20Dr.%20Vila"
-               target="_blank" rel="noopener"
-               class="lg:hidden flex items-center gap-1.5 bg-secondary text-primary text-[0.62rem] tracking-widest uppercase font-semibold px-4 py-2.5 rounded-sm">
-                <span class="material-symbols-outlined text-base leading-none">chat</span>
-                Consultar
-            </a>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-copy">
+        <span class="eyebrow reveal">Rinoplastia ultrasónica en Buenos Aires</span>
+        <h1 class="reveal">Rinoplastia Ultrasónica</h1>
+        <p class="hero-lede reveal">Una técnica de precisión para modelar el hueso nasal con menor trauma, menos inflamación y un resultado natural, elegante y personalizado.</p>
+        <div class="hero-actions reveal">
+          <a class="btn primary" href="https://wa.me/5491139583670?text=Hola%2C%20quiero%20consultar%20por%20rinoplastia%20ultras%C3%B3nica%20con%20el%20Dr.%20Vila" target="_blank" rel="noopener">Agendar consulta</a>
+          <a class="btn" href="#tecnica">Ver técnica</a>
         </div>
-    </header>
-
-    <!-- ════════════════════════════════════════
-         HERO
-    ════════════════════════════════════════ -->
-    <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./home-1.jpg');"></div>
-        <div class="absolute inset-0 hero-overlay"></div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-28">
-            <div class="max-w-2xl">
-                <span class="section-label mb-5 reveal">Tecnología Piezoeléctrica · Sin Martillo</span>
-                <h1 class="text-5xl md:text-6xl lg:text-[4.5rem] font-light leading-[1.06] tracking-tight mb-7 reveal">
-                    Rinoplastia<br/>
-                    <strong class="font-bold text-secondary">Ultrasónica</strong>
-                </h1>
-                <p class="text-base md:text-lg text-on-primary/70 font-light leading-relaxed max-w-xl mb-11 reveal">
-                    El bisturí piezoeléctrico actúa exclusivamente sobre el hueso, preservando íntegramente los tejidos blandos. Sin fracturas bruscas. Mínimos moratones. Recuperación acelerada y resultados naturales, estables y permanentes.
-                </p>
-                <div class="flex flex-wrap gap-4 reveal">
-                    <a href="https://wa.me/5491139583670?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20de%20Rinoplastia%20Ultras%C3%B3nica%20con%20el%20Dr.%20Vila"
-                       target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2.5 bg-secondary text-primary text-xs font-bold tracking-[0.18em] uppercase px-9 py-4 rounded-sm hover:bg-secondary/85 transition-all hover:scale-[1.02] active:scale-100 shadow-lg shadow-secondary/20">
-                        <span class="material-symbols-outlined text-lg leading-none">chat</span>
-                        Solicitar Consulta
-                    </a>
-                    <a href="#procedimientos"
-                       class="inline-flex items-center gap-2.5 border border-on-primary/25 text-on-primary/75 text-xs font-medium tracking-[0.18em] uppercase px-9 py-4 rounded-sm hover:border-secondary hover:text-secondary transition-all">
-                        Ver Procedimiento
-                        <span class="material-symbols-outlined text-lg leading-none">south</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll pulse -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-30">
-            <span class="text-[0.5rem] tracking-[0.3em] uppercase text-on-primary font-light">Scroll</span>
-            <div class="w-px h-10 bg-gradient-to-b from-on-primary to-transparent animate-pulse"></div>
-        </div>
+      </div>
+      <div class="hero-media">
+        <img src="./home-1.jpg" alt="Dr. Leandro Vila" />
+        <div class="media-tag">Cirugía plástica facial</div>
+      </div>
     </section>
 
-    <!-- ════════════════════════════════════════
-         DIFERENCIADORES · 3 COLUMNAS
-    ════════════════════════════════════════ -->
-    <section class="bg-primary border-y border-on-primary/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-on-primary/6">
-
-                <div class="px-10 py-12 reveal">
-                    <span class="material-symbols-outlined text-secondary text-4xl block mb-4">precision_manufacturing</span>
-                    <h3 class="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-on-primary mb-2">Precisión Milimétrica</h3>
-                    <p class="text-on-primary/50 text-sm font-light leading-relaxed">
-                        La vibración ultrasónica actúa selectivamente sobre tejido mineralizado, sin tocar cartílagos, nervios ni mucosa nasal.
-                    </p>
-                </div>
-
-                <div class="px-10 py-12 reveal" style="transition-delay:0.1s">
-                    <span class="material-symbols-outlined text-secondary text-4xl block mb-4">healing</span>
-                    <h3 class="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-on-primary mb-2">Mínima Equimosis</h3>
-                    <p class="text-on-primary/50 text-sm font-light leading-relaxed">
-                        Sin osteótomos ni martillos. La vibración controlada preserva los vasos sanguíneos y reduce drásticamente los moratones postoperatorios.
-                    </p>
-                </div>
-
-                <div class="px-10 py-12 reveal" style="transition-delay:0.2s">
-                    <span class="material-symbols-outlined text-secondary text-4xl block mb-4">schedule</span>
-                    <h3 class="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-on-primary mb-2">Recuperación Veloz</h3>
-                    <p class="text-on-primary/50 text-sm font-light leading-relaxed">
-                        La mayoría de los pacientes retoma su vida social en 7 a 10 días. Edema y hematomas se resuelven notablemente más rápido que con la técnica clásica.
-                    </p>
-                </div>
-
-            </div>
+    <section id="tecnica">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Tecnología piezoeléctrica</span>
+            <h2 class="reveal">Precisión sin martillo</h2>
+          </div>
+          <p class="reveal">La rinoplastia ultrasónica reemplaza los golpes de la técnica clásica por vibraciones controladas. Permite trabajar el hueso con más delicadeza y preservar mejor los tejidos blandos.</p>
         </div>
+        <div class="split">
+          <div class="wide-text reveal">
+            <p>El bisturí piezoeléctrico actúa selectivamente sobre tejido mineralizado. Esto ayuda a reducir sangrado, hematomas e inflamación, y ofrece un campo quirúrgico más limpio para planificar cada milímetro.</p>
+            <p>El objetivo no es una nariz “operada”: es una nariz en armonía con la cara, estable en el tiempo y coherente con la identidad de cada paciente.</p>
+            <a class="btn whatsapp" href="https://wa.me/5491139583670?text=Hola%2C%20quiero%20saber%20si%20soy%20candidato%2Fa%20a%20rinoplastia%20ultras%C3%B3nica" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          </div>
+          <div class="video reveal">
+            <iframe src="https://www.youtube.com/embed/JJXwgEQDKP0" title="Rinoplastia ultrasónica Dr. Leandro Vila" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- ════════════════════════════════════════
-         PROCEDIMIENTO + VIDEO
-    ════════════════════════════════════════ -->
-    <section id="procedimientos" class="py-28 bg-surface-dark">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-
-                <!-- Texto -->
-                <div class="reveal">
-                    <span class="section-label mb-5">El procedimiento</span>
-                    <h2 class="text-4xl md:text-5xl font-light leading-tight mb-6">
-                        La tecnología que<br/>
-                        <strong class="font-bold text-secondary">redefine la cirugía nasal</strong>
-                    </h2>
-                    <span class="gold-line mb-9"></span>
-                    <div class="space-y-5 text-on-primary/60 text-sm font-light leading-relaxed">
-                        <p>
-                            La Rinoplastia Ultrasónica emplea un dispositivo piezoeléctrico que emite vibraciones de alta frecuencia para esculpir el hueso nasal con exactitud submilimétrica. A diferencia de la técnica convencional —que recurre a osteótomos y martillos generando un trauma significativo— la vibración ultrasónica trabaja <strong class="text-on-primary font-medium">exclusivamente sobre tejido mineralizado</strong>, respetando por completo los tejidos blandos circundantes.
-                        </p>
-                        <p>
-                            El resultado es una intervención más limpia, controlada y predecible. El Dr. Vila puede modelar el perfil óseo con la libertad de un escultor: <strong class="text-on-primary font-medium">menor sangrado intraoperatorio</strong>, campo quirúrgico más visible y un postoperatorio notablemente más confortable.
-                        </p>
-                        <p>
-                            Los resultados son estéticamente superiores y <strong class="text-on-primary font-medium">estructuralmente estables</strong>: hueso y cartílago cicatrizan en la posición deseada con precisión que la técnica clásica no puede ofrecer.
-                        </p>
-                    </div>
-                    <a href="https://wa.me/5491139583670?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20la%20Rinoplastia%20Ultras%C3%B3nica%20con%20el%20Dr.%20Vila"
-                       target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2.5 mt-10 bg-secondary text-primary text-[0.65rem] font-bold tracking-[0.18em] uppercase px-7 py-3.5 rounded-sm hover:bg-secondary/85 transition-all hover:scale-[1.02] active:scale-100">
-                        <span class="material-symbols-outlined text-base leading-none">chat</span>
-                        Consultar por WhatsApp
-                    </a>
-                </div>
-
-                <!-- Video -->
-                <div class="reveal" style="transition-delay:0.15s">
-                    <div class="video-wrapper rounded-sm overflow-hidden ring-1 ring-secondary/15 shadow-2xl shadow-black/60">
-                        <iframe
-                            src="https://www.youtube.com/embed/JJXwgEQDKP0"
-                            title="Rinoplastia Ultrasónica · Dr. Leandro Vila"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-                    <p class="mt-3.5 text-on-primary/30 text-[0.6rem] tracking-widest uppercase text-center">Material educativo · Procedimiento real</p>
-                </div>
-
-            </div>
+    <section id="beneficios">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Beneficios</span>
+            <h2 class="reveal">Natural, precisa, predecible</h2>
+          </div>
+          <p class="reveal">Cada indicación se define en consulta. La tecnología ayuda, pero el criterio quirúrgico y el análisis facial siguen siendo el centro del resultado.</p>
         </div>
+        <div class="grid-3">
+          <article class="feature reveal">
+            <span class="kicker">01</span>
+            <h3>Menor trauma</h3>
+            <p>Trabajo óseo controlado, sin fracturas bruscas y con mayor respeto por vasos, mucosa y tejidos blandos.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="kicker">02</span>
+            <h3>Recuperación cuidada</h3>
+            <p>Menos hematomas e inflamación en muchos pacientes, con una vuelta social generalmente más cómoda.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="kicker">03</span>
+            <h3>Diseño individual</h3>
+            <p>El plan se adapta a tu anatomía, tu respiración y tus objetivos, evitando resultados artificiales.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- ════════════════════════════════════════
-         COMPARATIVO: ULTRASÓNICA vs CLÁSICA
-    ════════════════════════════════════════ -->
-    <section id="beneficios" class="py-28 bg-primary">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-
-            <div class="text-center mb-16 reveal">
-                <span class="section-label mb-5">Comparativa técnica</span>
-                <h2 class="text-4xl md:text-5xl font-light leading-tight">
-                    ¿Por qué elegir la técnica<br/>
-                    <strong class="font-bold text-secondary">ultrasónica?</strong>
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 reveal">
-                <!-- Clásica -->
-                <div class="bg-surface-dark/50 border border-on-primary/7 rounded-sm p-8 md:p-10">
-                    <h3 class="flex items-center gap-2 text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-on-primary/35 mb-7">
-                        <span class="material-symbols-outlined text-on-primary/20 text-lg">do_not_disturb_on</span>
-                        Rinoplastia Clásica
-                    </h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">remove</span>
-                            Osteótomo y martillo: fracturas óseas por impacto brusco
-                        </li>
-                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">remove</span>
-                            Trauma extenso en tejidos blandos, nervios y vasos
-                        </li>
-                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">remove</span>
-                            Equimosis marcada, frecuentemente bilateral y prolongada
-                        </li>
-                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">remove</span>
-                            Edema que puede persistir entre 3 y 6 meses
-                        </li>
-                        <li class="flex items-start gap-3 text-on-primary/45 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-on-primary/20 text-base mt-0.5 shrink-0">remove</span>
-                            Menor predictibilidad en la posición final del hueso
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Ultrasónica -->
-                <div class="bg-secondary/5 border border-secondary/22 rounded-sm p-8 md:p-10">
-                    <h3 class="flex items-center gap-2 text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-secondary mb-7">
-                        <span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings:'FILL' 1">check_circle</span>
-                        Rinoplastia Ultrasónica
-                    </h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
-                            Bisturí piezoeléctrico: vibración de alta frecuencia sin impacto
-                        </li>
-                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
-                            Preservación total de tejidos blandos, mucosa y nervios
-                        </li>
-                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
-                            Mínima equimosis: reinserción social en 7–10 días
-                        </li>
-                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
-                            Edema postoperatorio significativamente reducido
-                        </li>
-                        <li class="flex items-start gap-3 text-on-primary/80 text-sm font-light leading-snug">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check</span>
-                            Remodelado óseo preciso, estable y permanente
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 4 KPI Cards -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                <div class="bg-surface-dark/35 border border-on-primary/5 rounded-sm p-6 text-center reveal">
-                    <span class="material-symbols-outlined text-secondary text-3xl block mb-3">bolt</span>
-                    <p class="text-[0.62rem] font-semibold tracking-widest uppercase text-on-primary mb-1">Tecnología</p>
-                    <p class="text-on-primary/45 text-xs font-light">Bisturí piezoeléctrico ultrasónico</p>
-                </div>
-                <div class="bg-surface-dark/35 border border-on-primary/5 rounded-sm p-6 text-center reveal" style="transition-delay:0.07s">
-                    <span class="material-symbols-outlined text-secondary text-3xl block mb-3">visibility</span>
-                    <p class="text-[0.62rem] font-semibold tracking-widest uppercase text-on-primary mb-1">Campo visual</p>
-                    <p class="text-on-primary/45 text-xs font-light">Quirófano limpio y sin sangrado activo</p>
-                </div>
-                <div class="bg-surface-dark/35 border border-on-primary/5 rounded-sm p-6 text-center reveal" style="transition-delay:0.14s">
-                    <span class="material-symbols-outlined text-secondary text-3xl block mb-3">favorite</span>
-                    <p class="text-[0.62rem] font-semibold tracking-widest uppercase text-on-primary mb-1">Resultados</p>
-                    <p class="text-on-primary/45 text-xs font-light">Naturales, armónicos y duraderos</p>
-                </div>
-                <div class="bg-surface-dark/35 border border-on-primary/5 rounded-sm p-6 text-center reveal" style="transition-delay:0.21s">
-                    <span class="material-symbols-outlined text-secondary text-3xl block mb-3">event_available</span>
-                    <p class="text-[0.62rem] font-semibold tracking-widest uppercase text-on-primary mb-1">Recuperación</p>
-                    <p class="text-on-primary/45 text-xs font-light">7 a 10 días al mundo social</p>
-                </div>
-            </div>
-
+    <section class="quote-band">
+      <div class="wrap">
+        <span class="eyebrow reveal">Proceso</span>
+        <h2 class="reveal">Una consulta clara antes de decidir</h2>
+        <div class="steps">
+          <div class="step reveal"><strong>01</strong><h3>Evaluación</h3><p>Análisis facial, respiratorio y fotográfico para entender tu caso.</p></div>
+          <div class="step reveal"><strong>02</strong><h3>Plan</h3><p>Definición honesta de qué puede mejorarse y qué resultado es realista.</p></div>
+          <div class="step reveal"><strong>03</strong><h3>Cirugía</h3><p>Técnica ultrasónica y maniobras estructurales según tu anatomía.</p></div>
+          <div class="step reveal"><strong>04</strong><h3>Seguimiento</h3><p>Controles postoperatorios para acompañar la evolución del resultado.</p></div>
         </div>
+      </div>
     </section>
 
-    <!-- ════════════════════════════════════════
-         DR. VILA
-    ════════════════════════════════════════ -->
-    <section id="doctor" class="py-28 bg-surface-dark">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="max-w-3xl mx-auto text-center reveal">
-                <span class="section-label mb-5">El especialista</span>
-                <h2 class="text-4xl md:text-5xl font-light leading-tight mb-6">Dr. Leandro Vila</h2>
-                <span class="gold-line mx-auto mb-9"></span>
-                <p class="text-on-primary/55 text-sm font-light leading-relaxed mb-5">
-                    Cirujano Plástico certificado con formación especializada en cirugía estética y reconstructiva de rostro. El Dr. Vila incorporó la rinoplastia piezoeléctrica a su práctica tras perfeccionarse con referentes europeos de primer nivel, llevando a Buenos Aires los estándares de las clínicas de Milán, París y Barcelona.
-                </p>
-                <p class="text-on-primary/55 text-sm font-light leading-relaxed mb-12">
-                    Su filosofía es precisa: la nariz ideal no es la más pequeña ni la más intervenida, sino aquella que armoniza con el rostro único de cada paciente. La tecnología ultrasónica le brinda la libertad técnica para alcanzar ese equilibrio con un nivel de control que la técnica clásica no puede igualar.
-                </p>
-                <div class="flex flex-wrap justify-center gap-8 md:gap-14">
-                    <div>
-                        <p class="text-4xl font-bold text-secondary">+1.200</p>
-                        <p class="text-[0.6rem] text-on-primary/35 tracking-[0.2em] uppercase font-light mt-1.5">Rinoplastias realizadas</p>
-                    </div>
-                    <div class="w-px bg-on-primary/8 self-stretch hidden md:block"></div>
-                    <div>
-                        <p class="text-4xl font-bold text-secondary">15+</p>
-                        <p class="text-[0.6rem] text-on-primary/35 tracking-[0.2em] uppercase font-light mt-1.5">Años de trayectoria</p>
-                    </div>
-                    <div class="w-px bg-on-primary/8 self-stretch hidden md:block"></div>
-                    <div>
-                        <p class="text-4xl font-bold text-secondary">100%</p>
-                        <p class="text-[0.6rem] text-on-primary/35 tracking-[0.2em] uppercase font-light mt-1.5">Equipo certificado & anestesiología</p>
-                    </div>
-                </div>
-            </div>
+    <section id="doctor">
+      <div class="wrap">
+        <div class="doctor-card reveal">
+          <img src="./home-1.jpg" alt="Retrato del Dr. Leandro Vila" />
+          <div class="doctor-copy">
+            <span class="eyebrow">Dr. Leandro Vila</span>
+            <h2>Cirugía facial con mirada estética</h2>
+            <p class="wide-text">El enfoque combina precisión técnica, proporción facial y una conversación honesta sobre expectativas. La mejor rinoplastia es la que mejora sin borrar identidad.</p>
+            <ul>
+              <li>Cirugía plástica facial y rinoplastia ultrasónica.</li>
+              <li>Atención personalizada en Buenos Aires.</li>
+              <li>Plan quirúrgico adaptado a estructura, piel y función nasal.</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- ════════════════════════════════════════
-         CANDIDATOS / INDICACIONES
-    ════════════════════════════════════════ -->
-    <section class="py-24 bg-primary">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-                <div class="reveal">
-                    <span class="section-label mb-5">¿Sos candidato/a?</span>
-                    <h2 class="text-4xl font-light leading-tight mb-6">
-                        Indicaciones ideales de la<br/>
-                        <strong class="font-bold text-secondary">técnica piezoeléctrica</strong>
-                    </h2>
-                    <span class="gold-line mb-9"></span>
-                    <ul class="space-y-4 text-on-primary/60 text-sm font-light leading-relaxed">
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
-                            Joroba o giba dorsal: exceso óseo visible en perfil
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
-                            Desviación nasal o fractura antigua del tabique
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
-                            Base nasal ancha que requiere osteotomías de cierre
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
-                            Casos que exigen remodelado óseo de alta precisión
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
-                            Pacientes que priorizan un postoperatorio mínimo y discreto
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">diamond</span>
-                            Resultados naturales sin aspecto de nariz "operada"
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Card Secundaria -->
-                <div class="reveal" style="transition-delay:0.12s">
-                    <div class="bg-secondary/5 border border-secondary/18 rounded-sm p-8 md:p-10 space-y-5">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="material-symbols-outlined text-secondary text-2xl">autorenew</span>
-                            <h3 class="text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-secondary">¿Buscás una revisión?</h3>
-                        </div>
-                        <p class="text-on-primary/55 text-sm font-light leading-relaxed">
-                            Si contás con una rinoplastia previa y buscás mejorar el resultado estético o funcional, el Dr. Vila aplica el mismo enfoque ultrasónico en cirugías de revisión: análisis profundo del caso, plan quirúrgico individualizado y los mismos estándares de precisión.
-                        </p>
-                        <a href="secundaria.html"
-                           class="inline-flex items-center gap-2 text-[0.65rem] font-semibold tracking-[0.18em] uppercase text-secondary border-b border-secondary/35 pb-0.5 hover:border-secondary transition-colors">
-                            Ver Rinoplastia Secundaria
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+    <section class="contact" id="contacto">
+      <div class="wrap">
+        <div class="contact-box reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2>Tu primera evaluación</h2>
+          <p class="wide-text">Escribinos para coordinar una consulta. Revisamos tu caso, tus objetivos y si la rinoplastia ultrasónica es la mejor opción para vos.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://wa.me/5491139583670?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20de%20rinoplastia%20ultras%C3%B3nica" target="_blank" rel="noopener">WhatsApp directo</a>
+            <a class="btn" href="secundaria.html">Ver rinoplastia secundaria</a>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- ════════════════════════════════════════
-         TESTIMONIOS (carousel via app.js)
-    ════════════════════════════════════════ -->
-    <section id="testimonios" class="py-28 bg-gradient-to-b from-surface-dark to-primary">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 Dr. Leandro Vila</span>
+      <span>Buenos Aires · Argentina</span>
+    </div>
+  </footer>
 
-            <div class="text-center mb-14 reveal">
-                <span class="section-label mb-5">Experiencias reales</span>
-                <h2 class="text-4xl md:text-5xl font-light leading-tight">
-                    Pacientes que confiaron<br/>
-                    <strong class="font-bold text-secondary">en la técnica</strong>
-                </h2>
-            </div>
-
-            <div class="relative max-w-3xl mx-auto">
-
-                <!-- Slide 1 -->
-                <div data-testimonial-slide class="bg-primary/80 border border-on-primary/8 rounded-sm p-10 md:p-14">
-                    <div class="flex gap-1 text-secondary mb-7">
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                    </div>
-                    <blockquote class="text-on-primary/70 text-base md:text-lg font-light leading-relaxed mb-9 italic">
-                        "Tenía terror a los moratones y a estar encerrada semanas. Con la técnica del Dr. Vila, al séptimo día estaba de vuelta en el trabajo. La nariz quedó exactamente como la imaginé: armónica, sin que se note que me operé."
-                    </blockquote>
-                    <div class="flex items-center gap-4">
-                        <div class="w-11 h-11 rounded-full bg-secondary/15 border border-secondary/25 flex items-center justify-center shrink-0">
-                            <span class="text-secondary font-semibold text-sm">V</span>
-                        </div>
-                        <div>
-                            <p class="text-sm font-semibold text-on-primary">Valentina R.</p>
-                            <p class="text-[0.65rem] text-on-primary/35 font-light tracking-wide">Palermo, Buenos Aires · 2024</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div data-testimonial-slide class="hidden bg-primary/80 border border-on-primary/8 rounded-sm p-10 md:p-14">
-                    <div class="flex gap-1 text-secondary mb-7">
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                    </div>
-                    <blockquote class="text-on-primary/70 text-base md:text-lg font-light leading-relaxed mb-9 italic">
-                        "Tenía la nariz desviada desde un golpe de la adolescencia. Leandro me explicó cada detalle del proceso. La recuperación fue increíble: casi sin hematomas y una naturalidad que no parece cirugía. Resultado impecable."
-                    </blockquote>
-                    <div class="flex items-center gap-4">
-                        <div class="w-11 h-11 rounded-full bg-secondary/15 border border-secondary/25 flex items-center justify-center shrink-0">
-                            <span class="text-secondary font-semibold text-sm">M</span>
-                        </div>
-                        <div>
-                            <p class="text-sm font-semibold text-on-primary">Martín G.</p>
-                            <p class="text-[0.65rem] text-on-primary/35 font-light tracking-wide">Recoleta, Buenos Aires · 2024</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div data-testimonial-slide class="hidden bg-primary/80 border border-on-primary/8 rounded-sm p-10 md:p-14">
-                    <div class="flex gap-1 text-secondary mb-7">
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1">star</span>
-                    </div>
-                    <blockquote class="text-on-primary/70 text-base md:text-lg font-light leading-relaxed mb-9 italic">
-                        "Vine especialmente desde Córdoba porque encontré muy poca información sobre rinoplastia ultrasónica en Argentina. El resultado superó todas mis expectativas. El perfil quedó perfectamente alineado y la recuperación fue rapidísima."
-                    </blockquote>
-                    <div class="flex items-center gap-4">
-                        <div class="w-11 h-11 rounded-full bg-secondary/15 border border-secondary/25 flex items-center justify-center shrink-0">
-                            <span class="text-secondary font-semibold text-sm">S</span>
-                        </div>
-                        <div>
-                            <p class="text-sm font-semibold text-on-primary">Sofía L.</p>
-                            <p class="text-[0.65rem] text-on-primary/35 font-light tracking-wide">Córdoba Capital · 2025</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Controles del carrusel -->
-                <div class="flex items-center justify-between mt-8">
-                    <button data-testimonial-prev
-                            class="w-10 h-10 rounded-full border border-on-primary/12 flex items-center justify-center text-on-primary/40 hover:border-secondary hover:text-secondary transition-all">
-                        <span class="material-symbols-outlined text-base">chevron_left</span>
-                    </button>
-                    <div data-testimonial-dots class="flex items-center gap-2.5"></div>
-                    <button data-testimonial-next
-                            class="w-10 h-10 rounded-full border border-on-primary/12 flex items-center justify-center text-on-primary/40 hover:border-secondary hover:text-secondary transition-all">
-                        <span class="material-symbols-outlined text-base">chevron_right</span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ════════════════════════════════════════
-         CONTACTO / CONSULTA
-    ════════════════════════════════════════ -->
-    <section id="contacto" class="relative py-32 overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./consul.jpg');"></div>
-        <div class="absolute inset-0 bg-surface-dark/88"></div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="max-w-xl mx-auto text-center reveal">
-                <span class="section-label mb-5">Primer paso</span>
-                <h2 class="text-4xl md:text-5xl font-light leading-tight mb-6">
-                    Tu consulta inicial,<br/>
-                    <strong class="font-bold text-secondary">sin compromiso</strong>
-                </h2>
-                <span class="gold-line mx-auto mb-9"></span>
-                <p class="text-on-primary/55 text-sm font-light leading-relaxed mb-11">
-                    En la consulta con el Dr. Vila analizarás tu anatomía nasal, tus objetivos estéticos y si la técnica ultrasónica es la indicada para tu caso. Una conversación franca y sin presiones donde la información y la confianza están por encima de todo.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/5491139583670?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20de%20Rinoplastia%20Ultras%C3%B3nica%20con%20el%20Dr.%20Vila"
-                       target="_blank" rel="noopener"
-                       class="inline-flex items-center justify-center gap-2.5 bg-secondary text-primary text-xs font-bold tracking-[0.18em] uppercase px-9 py-4 rounded-sm hover:bg-secondary/85 transition-all hover:scale-[1.02] active:scale-100 shadow-lg shadow-secondary/20">
-                        <span class="material-symbols-outlined text-lg leading-none">chat</span>
-                        Reservar por WhatsApp
-                    </a>
-                    <a href="tel:+5491139583670"
-                       class="inline-flex items-center justify-center gap-2.5 border border-on-primary/22 text-on-primary/70 text-xs font-medium tracking-[0.18em] uppercase px-9 py-4 rounded-sm hover:border-secondary hover:text-secondary transition-all">
-                        <span class="material-symbols-outlined text-lg leading-none">call</span>
-                        Llamar al consultorio
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ════════════════════════════════════════
-         FOOTER
-    ════════════════════════════════════════ -->
-    <footer class="bg-surface-dark border-t border-on-primary/5 pt-16 pb-10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
-
-                <!-- Marca -->
-                <div>
-                    <p class="text-[0.7rem] tracking-[0.22em] text-secondary uppercase font-semibold mb-1">Dr. Leandro Vila</p>
-                    <p class="text-[0.58rem] tracking-[0.16em] text-on-primary/35 uppercase font-light mb-5">Cirujano Plástico · Buenos Aires</p>
-                    <p class="text-on-primary/40 text-xs font-light leading-relaxed">
-                        Especialista en Rinoplastia Ultrasónica piezoeléctrica y cirugía plástica facial de alta complejidad. Consultorios en la Ciudad de Buenos Aires.
-                    </p>
-                </div>
-
-                <!-- Nav -->
-                <div>
-                    <p class="text-[0.6rem] tracking-[0.22em] text-on-primary/30 uppercase font-semibold mb-5">Navegación</p>
-                    <ul class="space-y-3">
-                        <li><a href="#inicio"         class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Inicio</a></li>
-                        <li><a href="#procedimientos" class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Procedimiento</a></li>
-                        <li><a href="#beneficios"     class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Beneficios</a></li>
-                        <li><a href="#doctor"         class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Dr. Vila</a></li>
-                        <li><a href="#testimonios"    class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Testimonios</a></li>
-                        <li><a href="secundaria.html" class="text-secondary/65 text-xs font-light hover:text-secondary transition-colors">Rinoplastia Secundaria</a></li>
-                        <li><a href="#contacto"       class="text-on-primary/45 text-xs font-light hover:text-secondary transition-colors">Consulta</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contacto -->
-                <div>
-                    <p class="text-[0.6rem] tracking-[0.22em] text-on-primary/30 uppercase font-semibold mb-5">Contacto</p>
-                    <ul class="space-y-3.5">
-                        <li class="flex items-center gap-2.5 text-on-primary/45 text-xs font-light">
-                            <span class="material-symbols-outlined text-secondary text-sm shrink-0">location_on</span>
-                            Buenos Aires, Argentina
-                        </li>
-                        <li class="flex items-center gap-2.5 text-xs font-light">
-                            <span class="material-symbols-outlined text-secondary text-sm shrink-0">chat</span>
-                            <a href="https://wa.me/5491139583670" target="_blank" rel="noopener"
-                               class="text-on-primary/45 hover:text-secondary transition-colors">WhatsApp directo</a>
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/5491139583670?text=Hola%2C%20quiero%20consultar%20sobre%20Rinoplastia%20Ultras%C3%B3nica"
-                       target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2 mt-7 bg-secondary/8 border border-secondary/20 text-secondary text-[0.62rem] font-semibold tracking-[0.18em] uppercase px-5 py-2.5 rounded-sm hover:bg-secondary/15 transition-all">
-                        <span class="material-symbols-outlined text-sm">chat</span>
-                        Consultar ahora
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="border-t border-on-primary/5 pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
-                <p class="text-on-primary/20 text-[0.62rem] font-light">© 2025 Dr. Leandro Vila · Todos los derechos reservados</p>
-                <p class="text-on-primary/15 text-[0.62rem] font-light">Registro CUCAI · M.N. 147814</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ── Botón flotante WhatsApp ── -->
-    <a href="https://wa.me/5491139583670?text=Hola%2C%20quisiera%20consultar%20sobre%20Rinoplastia%20Ultras%C3%B3nica%20con%20el%20Dr.%20Vila"
-       target="_blank" rel="noopener"
-       aria-label="Contactar por WhatsApp"
-       class="fixed bottom-7 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl shadow-black/30 hover:scale-110 hover:bg-[#20bd5a] transition-all">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
-
-    <!-- ── app.js ── -->
-    <script src="./app.js"></script>
-
-    <!-- ── Navbar scroll effect ── -->
-    <script>
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 64) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
-        }, { passive: true });
-    </script>
-
+  <a class="float-wa" href="https://wa.me/5491139583670" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WA</a>
+  <script src="./app.js"></script>
 </body>
 </html>
