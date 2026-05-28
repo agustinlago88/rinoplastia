@@ -55,7 +55,7 @@
     .brand {
       font-size: clamp(1.2rem, 2vw, 1.65rem);
       font-weight: 800;
-      letter-spacing: -.04em;
+      letter-spacing: 0;
       white-space: nowrap;
     }
     .nav-links {
@@ -126,8 +126,8 @@
       max-width: 820px;
       margin-bottom: 32px;
       font-size: clamp(3.8rem, 8.4vw, 7.5rem);
-      line-height: .84;
-      letter-spacing: -.095em;
+      line-height: .94;
+      letter-spacing: 0;
       font-weight: 900;
     }
     .hero-lede {
@@ -204,9 +204,9 @@
       margin-bottom: 48px;
     }
     h2 {
-      font-size: clamp(2.8rem, 7vw, 6.7rem);
-      line-height: .86;
-      letter-spacing: -.08em;
+      font-size: clamp(2.55rem, 6.1vw, 5.8rem);
+      line-height: .98;
+      letter-spacing: 0;
       font-weight: 900;
       margin-bottom: 0;
     }
@@ -239,8 +239,8 @@
     }
     .feature h3 {
       font-size: clamp(1.35rem, 2vw, 1.8rem);
-      line-height: 1;
-      letter-spacing: -.04em;
+      line-height: 1.08;
+      letter-spacing: 0;
       margin-bottom: 18px;
     }
     .feature p { color: var(--muted); line-height: 1.65; margin-bottom: 0; }
@@ -258,6 +258,38 @@
       box-shadow: 0 30px 90px rgba(0,0,0,.35);
     }
     .video iframe { width: 100%; height: 100%; border: 0; }
+    .secondary-section {
+      background:
+        linear-gradient(90deg, transparent, rgba(85, 212, 202, .06)),
+        var(--bg-deep);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .secondary-panel {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(320px, 1fr);
+      gap: clamp(34px, 6vw, 72px);
+      align-items: center;
+      margin-top: 42px;
+    }
+    .secondary-note {
+      border-left: 2px solid var(--accent);
+      padding-left: 26px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .mini-list {
+      display: grid;
+      gap: 14px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+    }
+    .mini-list li {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
     .quote-band {
       background: #f2f0ea;
       color: #171717;
@@ -331,6 +363,24 @@
       padding-left: 30px;
       border-left: 2px solid var(--accent);
     }
+    .location {
+      padding-top: clamp(66px, 8vw, 100px);
+      background: var(--bg);
+    }
+    .map-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: 0 28px 80px rgba(0,0,0,.25);
+    }
+    .map-panel iframe {
+      display: block;
+      width: 100%;
+      height: min(62vh, 520px);
+      min-height: 360px;
+      border: 0;
+      filter: grayscale(.2) contrast(1.05);
+    }
     footer {
       padding: 34px 0;
       border-top: 1px solid var(--line);
@@ -375,7 +425,7 @@
       }
       body.menu-open .nav-links { display: flex; }
       .nav-links a { padding: 12px 0; }
-      .hero, .section-head, .split, .doctor-card { grid-template-columns: 1fr; }
+      .hero, .section-head, .split, .secondary-panel, .doctor-card { grid-template-columns: 1fr; }
       .hero-copy { width: min(100% - 32px, 1180px); margin: 0 auto; }
       .hero-media { min-height: 560px; border-left: 0; border-top: 1px solid var(--line); }
       .grid-3, .steps { grid-template-columns: 1fr; }
@@ -386,7 +436,7 @@
       .site-header, .nav { height: 74px; }
       .nav-links { top: 74px; }
       .brand { font-size: 1.1rem; }
-      h1 { font-size: clamp(4rem, 21vw, 6rem); }
+      h1 { font-size: clamp(3.3rem, 16vw, 5.2rem); }
       .hero { padding-top: 74px; }
       .hero-media { min-height: 480px; }
       .hero-lede { padding-left: 18px; }
@@ -405,7 +455,7 @@
         <a href="#tecnica">Técnica</a>
         <a href="#beneficios">Beneficios</a>
         <a href="#doctor">Sobre mí</a>
-        <a href="secundaria.html">Secundaria</a>
+        <a href="#secundaria">Secundaria</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" data-menu-toggle>☰</button>
@@ -446,6 +496,34 @@
           </div>
           <div class="video reveal">
             <iframe src="https://www.youtube.com/embed/JJXwgEQDKP0" title="Rinoplastia ultrasónica Dr. Leandro Vila" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secondary-section" id="secundaria">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Rinoplastia ultrasónica secundaria</span>
+            <h2 class="reveal">Corrección y revisión nasal</h2>
+          </div>
+          <p class="reveal">La rinoplastia secundaria comparte la misma segmentación que la primaria: pacientes que buscan mejorar forma, función y naturalidad. La diferencia es que el punto de partida ya fue intervenido, por eso exige una planificación más profunda.</p>
+        </div>
+        <div class="secondary-panel">
+          <div class="video reveal">
+            <iframe src="https://www.youtube.com/embed/5_yjbi3_-6g" title="Rinoplastia ultrasónica secundaria Dr. Leandro Vila" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="wide-text reveal">
+            <p class="secondary-note">Cuando una cirugía previa dejó asimetrías, irregularidades, punta caída, obstrucción respiratoria o un resultado que no acompaña el rostro, el abordaje debe ser preciso, realista y cuidadoso con los tejidos ya operados.</p>
+            <ul class="mini-list">
+              <li>Diagnóstico de hueso, cartílago, piel, cicatrices internas y función respiratoria.</li>
+              <li>Uso de tecnología piezoeléctrica para trabajar el componente óseo con menor trauma.</li>
+              <li>Reconstrucción estructural con injertos propios cuando el caso lo requiere.</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn primary" href="https://wa.me/5491139583670?text=Hola%2C%20quiero%20evaluar%20mi%20caso%20de%20rinoplastia%20ultras%C3%B3nica%20secundaria" target="_blank" rel="noopener">Evaluar mi caso</a>
+            </div>
           </div>
         </div>
       </div>
@@ -519,8 +597,28 @@
           <p class="wide-text">Escribinos para coordinar una consulta. Revisamos tu caso, tus objetivos y si la rinoplastia ultrasónica es la mejor opción para vos.</p>
           <div class="hero-actions">
             <a class="btn primary" href="https://wa.me/5491139583670?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20de%20rinoplastia%20ultras%C3%B3nica" target="_blank" rel="noopener">WhatsApp directo</a>
-            <a class="btn" href="secundaria.html">Ver rinoplastia secundaria</a>
+            <a class="btn" href="#secundaria">Ver rinoplastia secundaria</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="ubicacion">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Ubicación</span>
+            <h2 class="reveal">Consultorio en Buenos Aires</h2>
+          </div>
+          <p class="reveal">Coordiná tu evaluación por WhatsApp y te enviamos los detalles para la consulta presencial.</p>
+        </div>
+        <div class="map-panel reveal">
+          <iframe
+            title="Mapa de ubicación Dr. Leandro Vila"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Dr.%20Leandro%20Vila%20Buenos%20Aires&output=embed">
+          </iframe>
         </div>
       </div>
     </section>
