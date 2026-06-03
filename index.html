@@ -97,19 +97,39 @@
     .hero {
       min-height: 100vh;
       padding-top: 86px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-bottom: 1px solid var(--line);
-      background:
-        linear-gradient(90deg, rgba(85,212,202,.10), transparent 38%),
-        var(--bg);
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.6;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(23, 23, 23, 0.6) 0%, rgba(23, 23, 23, 0.8) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
     .hero-copy {
-      width: min(640px, calc(100% - 48px));
-      margin-left: max(24px, calc((100vw - 1180px) / 2));
-      margin-right: 0;
+      position: relative;
+      z-index: 2;
+      width: min(800px, calc(100% - 48px));
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       justify-content: center;
       padding: clamp(56px, 8vw, 112px) 0 clamp(42px, 7vw, 80px);
     }
@@ -133,13 +153,11 @@
     }
     .hero-lede {
       max-width: 620px;
-      border-left: 2px solid var(--accent);
-      padding-left: 28px;
       color: var(--muted);
       font-size: clamp(1rem, 1.8vw, 1.32rem);
       line-height: 1.55;
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 34px; }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -158,30 +176,6 @@
     .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
     .btn.primary { background: var(--accent); color: #081210; border-color: var(--accent); }
     .btn.whatsapp { background: var(--whatsapp); border-color: var(--whatsapp); color: #06140b; }
-    .hero-media {
-      position: relative;
-      min-height: 620px;
-      border-left: 1px solid var(--line);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      overflow: hidden;
-      background: #090909;
-    }
-    .hero-media::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(23,23,23,.84));
-      z-index: 1;
-    }
-    .hero-media img {
-      width: min(100%, 560px);
-      height: min(82vh, 760px);
-      object-fit: cover;
-      object-position: center top;
-      filter: grayscale(1) contrast(1.08);
-    }
     .media-tag {
       position: absolute;
       z-index: 2;
@@ -403,9 +397,8 @@
       }
       body.menu-open .nav-links { display: flex; }
       .nav-links a { padding: 12px 0; }
-      .hero, .section-head, .split, .secondary-panel, .contact-grid { grid-template-columns: 1fr; }
+      .section-head, .split, .secondary-panel, .contact-grid { grid-template-columns: 1fr; }
       .hero-copy { width: min(100% - 32px, 1180px); margin: 0 auto; }
-      .hero-media { min-height: 560px; border-left: 0; border-top: 1px solid var(--line); }
       .grid-3, .steps { grid-template-columns: 1fr; }
       .wrap { width: min(100% - 32px, 1180px); }
     }
@@ -416,8 +409,6 @@
       .brand { font-size: 1.1rem; }
       h1 { font-size: clamp(3.1rem, 15vw, 5rem); }
       .hero { padding-top: 74px; }
-      .hero-media { min-height: 480px; }
-      .hero-lede { padding-left: 18px; }
       .btn { width: 100%; }
       .feature, .step { padding: 26px; }
     }
@@ -447,8 +438,9 @@ src="https://www.facebook.com/tr?id=1309859087272068&ev=PageView&noscript=1"
       <nav class="nav-links" aria-label="Navegación principal">
         <a class="active" href="#inicio">Inicio</a>
         <a href="#tecnica">Técnica</a>
-        <a href="#beneficios">Beneficios</a>
+        <a href="#filosofia">Sobre Mí</a>
         <a href="#secundaria">Secundaria</a>
+        <a href="#beneficios">Beneficios</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" data-menu-toggle>☰</button>
@@ -457,6 +449,13 @@ src="https://www.facebook.com/tr?id=1309859087272068&ev=PageView&noscript=1"
 
   <main>
     <section class="hero" id="inicio">
+      <!-- Video de Fondo en Loop (Muted, compressed, colorful but dimmed) -->
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="./intro_compressed.mp4" type="video/mp4">
+      </video>
+      <!-- Capa de Oscurecimiento para Legibilidad Suprema -->
+      <div class="hero-overlay"></div>
+      
       <div class="wrap hero-copy">
         <span class="eyebrow reveal">Rinoplastia ultrasónica en Buenos Aires</span>
         <h1 class="reveal">Rinoplastia Ultrasónica</h1>
@@ -466,10 +465,7 @@ src="https://www.facebook.com/tr?id=1309859087272068&ev=PageView&noscript=1"
           <a class="btn" href="#tecnica">Ver técnica</a>
         </div>
       </div>
-      <div class="hero-media">
-        <img src="./home-1.jpg" alt="Dr. Leandro Vila" />
-        <div class="media-tag">M.N. 147814</div>
-      </div>
+      <div class="media-tag">M.N. 147814</div>
     </section>
 
     <section id="tecnica">
@@ -489,6 +485,30 @@ src="https://www.facebook.com/tr?id=1309859087272068&ev=PageView&noscript=1"
           </div>
           <div class="video reveal">
             <iframe src="https://www.youtube.com/embed/JJXwgEQDKP0" title="Rinoplastia ultrasónica Dr. Leandro Vila" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secondary-section" id="filosofia">
+      <div class="wrap">
+        <div class="split">
+          <div class="reveal" style="position: relative;">
+            <img src="./home-1.jpg" alt="Dr. Leandro Vila" style="border: 1px solid var(--line); box-shadow: 0 30px 90px rgba(0,0,0,.35); max-height: 580px; width: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08);" />
+            <div class="media-tag" style="position: absolute; bottom: 0; left: 0;">M.N. 147814</div>
+          </div>
+          <div class="wide-text reveal">
+            <span class="eyebrow">Sobre mí / Nuestra filosofía</span>
+            <h2>Naturalidad y precisión en cada detalle</h2>
+            <p style="margin-top: 24px;">Cada procedimiento está pensado para respetar tu esencia, buscando la armonía y la función respiratoria.</p>
+            <ul class="mini-list" style="margin-top: 24px;">
+              <li>✓ Evaluación 100% personalizada presencial u online.</li>
+              <li>✓ Tecnología ultrasónica para un menor trauma y mayor precisión.</li>
+              <li>✓ Resultados naturales, elegantes y estables en el tiempo.</li>
+            </ul>
+            <div class="hero-actions" style="margin-top: 34px;">
+              <a class="btn primary" href="https://wa.me/5491139583670?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20el%20Dr.%20Vila" target="_blank" rel="noopener">Agendar consulta</a>
+            </div>
           </div>
         </div>
       </div>
