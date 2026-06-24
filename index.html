@@ -412,6 +412,56 @@
       .btn { width: 100%; }
       .feature, .step { padding: 26px; }
     }
+
+    /* FAQ Accordion */
+    .faq-accordion {
+      max-width: 820px;
+      margin: 40px auto 0;
+      border-top: 1px solid var(--line);
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+    }
+    .faq-question {
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: 12px 0;
+      user-select: none;
+      transition: color 0.25s ease;
+    }
+    .faq-question::after {
+      content: "+";
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-question {
+      color: var(--accent);
+    }
+    .faq-item.active .faq-question::after {
+      content: "−";
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .faq-answer p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin: 0;
+      padding: 8px 0 16px;
+    }
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -441,6 +491,7 @@ src="https://www.facebook.com/tr?id=1309859087272068&ev=PageView&noscript=1"
         <a href="#filosofia">Sobre Mí</a>
         <a href="#secundaria">Secundaria</a>
         <a href="#beneficios">Beneficios</a>
+        <a href="#preguntas">Preguntas</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" data-menu-toggle>☰</button>
@@ -580,6 +631,75 @@ src="https://www.facebook.com/tr?id=1309859087272068&ev=PageView&noscript=1"
           <div class="step reveal"><strong>02</strong><h3>Plan</h3><p>Definición honesta de qué puede mejorarse y qué resultado es realista.</p></div>
           <div class="step reveal"><strong>03</strong><h3>Cirugía</h3><p>Técnica ultrasónica y maniobras estructurales según tu anatomía.</p></div>
           <div class="step reveal"><strong>04</strong><h3>Seguimiento</h3><p>Controles postoperatorios para acompañar la evolución del resultado.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secondary-section" id="preguntas">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Preguntas frecuentes</span>
+            <h2 class="reveal">Todo lo que querés saber</h2>
+          </div>
+        </div>
+
+        <div class="faq-accordion reveal">
+          <!-- Pregunta 1 -->
+          <div class="faq-item">
+            <h3 class="faq-question">¿Qué es la rinoplastia ultrasónica?</h3>
+            <div class="faq-answer">
+              <p>Es la evolución más avanzada en cirugía estética y funcional de nariz. A diferencia de las técnicas del pasado, utiliza un bisturí piezoeléctrico que emite vibraciones ultrasónicas. Esta tecnología de punta permite esculpir los huesos nasales con control milimétrico, respetando íntegramente los cartílagos y tejidos blandos circundantes.</p>
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="faq-item">
+            <h3 class="faq-question">¿En qué se diferencia de la rinoplastia tradicional?</h3>
+            <div class="faq-answer">
+              <p>La cirugía tradicional utiliza herramientas mecánicas (como escoplos, limas y martillos) que rompen el hueso de manera más brusca, generando un trauma inevitable en la zona. La rinoplastia ultrasónica reemplaza el golpe por la vibración de alta frecuencia. El hueso se pule y corta de forma suave y controlada, lo que se traduce en una cirugía mucho menos agresiva para tu cuerpo.</p>
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="faq-item">
+            <h3 class="faq-question">¿Cuáles son los principales beneficios de esta técnica?</h3>
+            <div class="faq-answer">
+              <p><strong>Resultados más naturales:</strong> El control absoluto sobre el hueso permite al Dr. Vila lograr una armonía perfecta que respeta tu identidad facial.<br><strong>Menos moretones (hematomas):</strong> Al no dañar los vasos sanguíneos vecinos, la aparición de marcas oscuras en el rostro disminuye drásticamente.<br><strong>Menor inflamación:</strong> El daño tisular es mínimo, por lo que la hinchazón postoperatoria es notablemente más leve.</p>
+            </div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="faq-item">
+            <h3 class="faq-question">¿Duele el postoperatorio?</h3>
+            <div class="faq-answer">
+              <p>La recuperación es mucho más amable y menos dolorosa que en una cirugía convencional. La mayoría de nuestros pacientes no reportan dolor, sino más bien una sensación de congestión nasal —similar a la de un resfrío fuerte— durante los primeros días.</p>
+            </div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="faq-item">
+            <h3 class="faq-question">¿Cuánto tiempo tarda la recuperación?</h3>
+            <div class="faq-answer">
+              <p>Gracias al uso del ultrasonido, el proceso de curación se acelera significativamente. Por lo general, los pacientes pueden retomar sus actividades sociales y laborales livianas en aproximadamente 7 a 10 días, luciendo un aspecto muy favorable desde el primer momento en que se retira la férula.</p>
+            </div>
+          </div>
+
+          <!-- Pregunta 6 -->
+          <div class="faq-item">
+            <h3 class="faq-question">¿Sirve esta cirugía si también respiro mal?</h3>
+            <div class="faq-answer">
+              <p>Absolutamente. La nariz no solo debe verse bien, sino funcionar a la perfección. Durante la rinoplastia ultrasónica, el Dr. Vila realiza un abordaje integral: se pueden corregir tabiques desviados (septoplastia) y cornetes hipertrofiados en la misma intervención para garantizar que respires tan bien como te ves.</p>
+            </div>
+          </div>
+
+          <!-- Pregunta 7 -->
+          <div class="faq-item">
+            <h3 class="faq-question">¿Deja cicatrices visibles?</h3>
+            <div class="faq-answer">
+              <p>El Dr. Leandro Vila suele utilizar un abordaje abierto (una incisión imperceptible en la base de la nariz, llamada columela). Esto le permite tener visión directa y usar el ultrasonido con la máxima precisión. Una vez que la zona cicatriza, esa pequeña marca se vuelve prácticamente invisible a simple vista.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

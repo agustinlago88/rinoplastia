@@ -33,3 +33,30 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => {
   revealObserver.observe(element);
 });
+
+// FAQ Accordion Toggle
+document.querySelectorAll(".faq-question").forEach((question) => {
+  question.addEventListener("click", () => {
+    const item = question.closest(".faq-item");
+    const isActive = item.classList.contains("active");
+
+    // Close other FAQ items (accordion behavior)
+    document.querySelectorAll(".faq-item").forEach((otherItem) => {
+      if (otherItem !== item) {
+        otherItem.classList.remove("active");
+        const otherAnswer = otherItem.querySelector(".faq-answer");
+        if (otherAnswer) otherAnswer.style.maxHeight = null;
+      }
+    });
+
+    item.classList.toggle("active");
+    const answer = item.querySelector(".faq-answer");
+    if (answer) {
+      if (item.classList.contains("active")) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = null;
+      }
+    }
+  });
+});
