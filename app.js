@@ -3,7 +3,7 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 if (menuToggle) {
   menuToggle.addEventListener("click", () => {
     const isOpen = document.body.classList.toggle("menu-open");
-    menuToggle.textContent = isOpen ? "×" : "☰";
+    menuToggle.textContent = isOpen ? "✕" : "☰";
     menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
   });
 }
@@ -17,6 +17,42 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
     }
   });
 });
+
+// Close mobile menu on Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
+    document.body.classList.remove("menu-open");
+    if (menuToggle) {
+      menuToggle.textContent = "☰";
+      menuToggle.setAttribute("aria-label", "Abrir menú");
+    }
+  }
+});
+
+// Scrollspy for active navigation links
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  const scrollPosition = window.pageYOffset + 120;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    if (current && link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    } else if (current) {
+      link.classList.remove("active");
+    }
+  });
+}, { passive: true });
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
